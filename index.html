@@ -586,6 +586,53 @@
                 font-size: 52px;
             }
         }
+        <script>
+    /* =========================================
+       MENZI MEDIA — SCROLL ANIMATION ENGINE
+    ========================================= */
+
+    const animatedElements = document.querySelectorAll(
+        '.service, .portfolio-item, .why-card, .about-grid, .contact-grid, .contact-box, .stats, .cta'
+    );
+
+    animatedElements.forEach((element, index) => {
+
+        element.classList.add('reveal');
+
+        const delay = (index % 4) + 1;
+
+        element.classList.add(`reveal-delay-${delay}`);
+
+    });
+
+
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add('visible');
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        }
+    );
+
+
+    animatedElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+</script>
     </style>
 </head>
 
@@ -1013,44 +1060,51 @@
     </a>
 
 
-    <!-- SIMPLE SCROLL ANIMATION -->
-    <script>
+    <!-- MENZI MEDIA SCROLL ANIMATION -->
+<script>
 
-        const elements = document.querySelectorAll(
-            '.service, .why-card, .portfolio-item, .about-grid, .contact-grid'
-        );
+    const animatedElements = document.querySelectorAll(
+        '.service, .portfolio-item, .why-card, .about-grid, .contact-grid, .contact-box, .stats, .cta'
+    );
 
-        const observer = new IntersectionObserver(
-            entries => {
+    animatedElements.forEach((element, index) => {
 
-                entries.forEach(entry => {
+        element.classList.add('reveal');
 
-                    if (entry.isIntersecting) {
+        const delay = (index % 4) + 1;
 
-                        entry.target.style.opacity = "1";
-                        entry.target.style.transform = "translateY(0)";
+        element.classList.add(`reveal-delay-${delay}`);
 
-                    }
+    });
 
-                });
 
-            },
-            {
-                threshold: 0.12
-            }
-        );
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
 
-        elements.forEach(element => {
+            entries.forEach(entry => {
 
-            element.style.opacity = "0";
-            element.style.transform = "translateY(25px)";
-            element.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+                if (entry.isIntersecting) {
 
-            observer.observe(element);
+                    entry.target.classList.add('visible');
 
-        });
+                    observer.unobserve(entry.target);
 
-    </script>
+                }
 
+            });
+
+        },
+        {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        }
+    );
+
+
+    animatedElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+
+</script>
 </body>
 </html>
