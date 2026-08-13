@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MENZI MEDIA | Creative Visuals</title>
+
+    <meta name="description"
+        content="MENZI MEDIA creates professional visual identities, marketing designs and creative content for businesses, brands and organizations.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 22px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #d6a84f;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: #cccccc;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d6a84f;
+        }
+
+        .nav-button {
+            padding: 11px 20px;
+            border: 1px solid #d6a84f;
+            color: #d6a84f;
+            border-radius: 30px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #d6a84f;
+            color: #000;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 150px 6% 80px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            background: #d6a84f;
+            opacity: 0.07;
+            filter: blur(120px);
+            border-radius: 50%;
+            top: 10%;
+            right: -150px;
+        }
+
+        .hero-content {
+            max-width: 950px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            color: #d6a84f;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 110px);
+            line-height: 0.92;
+            letter-spacing: -5px;
+            margin-bottom: 35px;
+            max-width: 1000px;
+        }
+
+        .hero h1 span {
+            color: #d6a84f;
+        }
+
+        .hero-text {
+            max-width: 650px;
+            color: #aaaaaa;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #d6a84f;
+            color: #080808;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(214,168,79,0.2);
+        }
+
+        .btn-outline {
+            border: 1px solid #444;
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            border-color: #d6a84f;
+            color: #d6a84f;
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 850px;
+            margin-top: 80px;
+            border-top: 1px solid #242424;
+            padding-top: 30px;
+            gap: 30px;
+        }
+
+        .stat h3 {
+            font-size: 28px;
+            color: #d6a84f;
+        }
+
+        .stat p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 110px 6%;
+        }
+
+        .section-label {
+            color: #d6a84f;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .section-title {
+            font-size: clamp(38px, 5vw, 70px);
+            line-height: 1;
+            letter-spacing: -2px;
+            max-width: 850px;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: #d6a84f;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: #242424;
+            border: 1px solid #242424;
+        }
+
+        .service {
+            background: #0d0d0d;
+            padding: 45px;
+            min-height: 270px;
+            transition: 0.4s;
+        }
+
+        .service:hover {
+            background: #141414;
+            transform: translateY(-4px);
+        }
+
+        .service-number {
+            color: #555;
+            font-size: 13px;
+            margin-bottom: 35px;
+        }
+
+        .service h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .service p {
+            color: #888;
+            max-width: 450px;
+        }
+
+        /* =========================
+           PORTFOLIO
+        ========================= */
+
+        .portfolio {
+            background: #0d0d0d;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .portfolio-item {
+            aspect-ratio: 1 / 1;
+            background: #171717;
+            border: 1px solid #242424;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item::after {
+            content: "MENZI MEDIA";
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #777;
+        }
+
+        .portfolio-placeholder {
+            text-align: center;
+            color: #444;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-big {
+            font-size: clamp(30px, 4vw, 55px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        .about-big span {
+            color: #d6a84f;
+        }
+
+        .about-text {
+            color: #999;
+            font-size: 17px;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           WHY US
+        ========================= */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            border: 1px solid #242424;
+            padding: 35px;
+            background: #0d0d0d;
+        }
+
+        .why-card h3 {
+            margin-bottom: 15px;
+            font-size: 21px;
+        }
+
+        .why-card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            text-align: center;
+            background: #111;
+            border-top: 1px solid #242424;
+            border-bottom: 1px solid #242424;
+        }
+
+        .cta h2 {
+            font-size: clamp(45px, 7vw, 90px);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            max-width: 900px;
+            margin: 0 auto 35px;
+        }
+
+        .cta h2 span {
+            color: #d6a84f;
+        }
+
+        .cta p {
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto 35px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .contact-info h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #888;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-details a {
+            color: #ccc;
+            transition: 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: #d6a84f;
+        }
+
+        .contact-box {
+            border: 1px solid #242424;
+            padding: 40px;
+            background: #0d0d0d;
+        }
+
+        .contact-box h3 {
+            margin-bottom: 25px;
+        }
+
+        .contact-box p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 6%;
+            border-top: 1px solid #242424;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .footer-brand {
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           WHATSAPP
+        ========================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.08);
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-button {
+                padding: 9px 15px;
+            }
+
+            .hero {
+                padding: 130px 5% 70px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-text {
+                font-size: 16px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service {
+                padding: 30px;
+            }
+
+            .cta h2 {
+                letter-spacing: -2px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home" class="logo">
+            MENZI<span>MEDIA</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="#contact" class="nav-button">Work With Us</a>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Creative Visual Studio
+            </div>
+
+            <h1>
+                MAKE YOUR<br>
+                BRAND <span>IMPOSSIBLE</span><br>
+                TO IGNORE.
+            </h1>
+
+            <p class="hero-text">
+                MENZI MEDIA helps businesses, brands and organizations
+                communicate through powerful, professional and memorable
+                visual design.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#work" class="btn btn-primary">
+                    Explore Our Work
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Start a Project
+                </a>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h3>01</h3>
+                    <p>Creative Thinking</p>
+                </div>
+
+                <div class="stat">
+                    <h3>02</h3>
+                    <p>Professional Design</p>
+                </div>
+
+                <div class="stat">
+                    <h3>03</h3>
+                    <p>Business Focused</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services">
+
+        <div class="section-label">
+            What We Do
+        </div>
+
+        <h2 class="section-title">
+            Design that gives your business a <span>voice.</span>
+        </h2>
+
+        <div class="services-grid">
+
+            <div class="service">
+                <div class="service-number">01 / BRANDING</div>
+                <h3>Brand Identity</h3>
+                <p>
+                    Logos, brand identities and visual systems designed
+                    to make your business recognizable and professional.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">02 / MARKETING</div>
+                <h3>Marketing Design</h3>
+                <p>
+                    Posters, flyers, social media graphics and promotional
+                    designs created to capture attention.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">03 / BUSINESS</div>
+                <h3>Business Design</h3>
+                <p>
+                    Company profiles, certificates, presentations,
+                    menus and other professional business materials.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">04 / MERCHANDISING</div>
+                <h3>Merchandise</h3>
+                <p>
+                    Creative T-shirt, clothing and product designs that
+                    turn your brand into something people can wear.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="work">
+
+        <div class="section-label">
+            Selected Work
+        </div>
+
+        <h2 class="section-title">
+            Some of the things we <span>create.</span>
+        </h2>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-item">
+                <div class="portfolio-placeholder">
+                    YOUR DESIGN
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-placeholder">
+                    YOUR DESIGN
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-placeholder">
+                    YOUR DESIGN
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-placeholder">
+                    YOUR DESIGN
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-placeholder">
+                    YOUR DESIGN
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-placeholder">
+                    YOUR DESIGN
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="about-grid">
+
+            <div>
+                <div class="section-label">
+                    About MENZI MEDIA
+                </div>
+
+                <div class="about-big">
+                    We don't just make things <span>look good.</span>
+                    We make brands look ready for business.
+                </div>
+            </div>
+
+            <div class="about-text">
+
+                <p>
+                    MENZI MEDIA is a creative visual studio focused on
+                    helping businesses and organizations present themselves
+                    professionally.
+                </p>
+
+                <p>
+                    From a simple promotional graphic to a complete brand
+                    identity, every design is created with one goal:
+                    helping your audience notice, remember and trust your brand.
+                </p>
+
+                <a href="#contact" class="btn btn-primary">
+                    Let's Work Together
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY MENZI MEDIA -->
+    <section>
+
+        <div class="section-label">
+            Why MENZI MEDIA
+        </div>
+
+        <h2 class="section-title">
+            Your business deserves more than <span>ordinary.</span>
+        </h2>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <h3>Creative Strategy</h3>
+                <p>
+                    We don't design just for decoration. We think about
+                    your audience, your message and your business goals.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <h3>Professional Image</h3>
+                <p>
+                    Strong visuals help customers take your business
+                    seriously. Your brand should look as professional
+                    as the service you provide.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <h3>Built For Your Brand</h3>
+                <p>
+                    No random templates. Your visual identity should
+                    communicate what makes your business different.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>
+            READY TO MAKE YOUR BRAND <span>STAND OUT?</span>
+        </h2>
+
+        <p>
+            Tell us what you're building. Let's create visuals that
+            make people notice your business.
+        </p>
+
+        <a href="#contact" class="btn btn-primary">
+            Start Your Project
+        </a>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <div class="section-label">
+                    Contact
+                </div>
+
+                <h3>
+                    Let's create something powerful.
+                </h3>
+
+                <p>
+                    Have a business, event, brand or project that needs
+                    professional design? Get in touch with MENZI MEDIA.
+                </p>
+
+                <div class="contact-details">
+
+                    <a href="mailto:menzimedia3@gmail.com">
+                        ✉ menzimedia3@gmail.com
+                    </a>
+
+                    <a href="#">
+                        WhatsApp: Add Your Number
+                    </a>
+
+                    <a href="#">
+                        Facebook: MENZI MEDIA
+                    </a>
+
+                    <a href="#">
+                        TikTok: MENZI MEDIA
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    Start a project
+                </h3>
+
+                <p>
+                    Send us a message and tell us what you need.
+                    We'll discuss the project and find the right
+                    creative solution for your brand.
+                </p>
+
+                <a href="mailto:menzimedia3@gmail.com"
+                   class="btn btn-primary">
+                    Contact MENZI MEDIA
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-brand">
+            MENZI MEDIA
+        </div>
+
+        <div>
+            © 2026 MENZI MEDIA. Creative Visuals.
+        </div>
+
+    </footer>
+
+
+    <!-- WHATSAPP -->
+    <a href="#" class="whatsapp" title="Chat on WhatsApp">
+        WA
+    </a>
+
+
+    <!-- SIMPLE SCROLL ANIMATION -->
+    <script>
+
+        const elements = document.querySelectorAll(
+            '.service, .why-card, .portfolio-item, .about-grid, .contact-grid'
+        );
+
+        const observer = new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+        elements.forEach(element => {
+
+            element.style.opacity = "0";
+            element.style.transform = "translateY(25px)";
+            element.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+
+            observer.observe(element);
+
+        });
+
+    </script>
+
+</body>
+</html>
