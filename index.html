@@ -638,6 +638,102 @@
         revealObserver.observe(element);
     });
 </script>
+/* =========================================
+   MY DESIGNS — MOVING GLOW
+========================================= */
+
+.portfolio-placeholder {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.08),
+            rgba(124, 58, 237, 0.10)
+        );
+}
+
+/* Moving light around the box */
+.portfolio-placeholder::before {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.9) 0%,
+        rgba(59, 130, 246, 0.45) 35%,
+        transparent 70%
+    );
+
+    filter: blur(12px);
+
+    top: -45px;
+    left: -45px;
+
+    animation: designGlowMove 5s linear infinite;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep the text/image above the glow */
+.portfolio-placeholder > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* The light travels around the box */
+@keyframes designGlowMove {
+
+    0% {
+        top: -45px;
+        left: -45px;
+    }
+
+    25% {
+        top: -45px;
+        left: calc(100% - 45px);
+    }
+
+    50% {
+        top: calc(100% - 45px);
+        left: calc(100% - 45px);
+    }
+
+    75% {
+        top: calc(100% - 45px);
+        left: -45px;
+    }
+
+    100% {
+        top: -45px;
+        left: -45px;
+    }
+}
+
+/* Subtle outer glow */
+.portfolio-placeholder {
+    box-shadow:
+        0 0 15px rgba(59, 130, 246, 0.08),
+        inset 0 0 25px rgba(139, 92, 246, 0.05);
+}
+        /* Extra soft glow */
+.portfolio-placeholder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(139, 92, 246, 0.06),
+            transparent 65%
+        );
+    pointer-events: none;
+    z-index: 1;
+}
     </style>
 </head>
 
